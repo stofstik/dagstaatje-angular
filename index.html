@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="dagstaatjeApp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Laurierboom Dagstaatje</title>
+
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="libraries/accounting.min.js"></script>
+    <script src="libraries/accounting-settings.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="mainController">
+    <div class="container" ng-controller="inputController">
+        <h3>{{title}}</h3>
+        <div class="row">
+            <label class="input-label">Beginkas:</label>
+            <input class="input-number" min="0" type="number" ng-model="start"/>
+            <span class="formatted-output-input">{{formattedArray[0]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Extra in kas:</label>
+            <input class="input-number" min="0" type="number" ng-model="extra"/>
+            <span class="formatted-output-input">{{formattedArray[1]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Totaal in:</label>
+            <span class="formatted-output-result">{{formattedArray[2]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Omzet:</label>
+            <input class="input-number" min="0" type="number" ng-model="turnover"/>
+            <span class="formatted-output-input">{{formattedArray[3]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Pof:</label>
+            <input class="input-number" min="0" type="number" ng-model="bill"/>
+            <span class="formatted-output-input">{{formattedArray[4]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Pof betaald:</label>
+            <input class="input-number" min="0" type="number" ng-model="billPayed"/>
+            <span class="formatted-output-input">{{formattedArray[5]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Kassastrook:</label>
+            <span class="formatted-output-result">{{formattedArray[6]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Totaal in kas:</label>
+            <span class="formatted-output-result">{{formattedArray[7]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Uit kas:</label>
+            <input class="input-number" min="0" type="number" ng-model="out"/>
+            <span class="formatted-output-input">{{formattedArray[8]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">PIN:</label>
+            <input class="input-number" min="0" type="number" ng-model="pin"/>
+            <span class="formatted-output-input">{{formattedArray[9]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Totaal uit kas:</label>
+            <span class="formatted-output-result">{{formattedArray[10]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Kas moet zijn:</label>
+            <span class="formatted-output-result">{{formattedArray[11]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Geteld:</label>
+            <input class="input-number" min="0" type="number" ng-model="counted"/>
+            <span class="formatted-output-input">{{formattedArray[12]}}</span>
+        </div>
+        <div class="row">
+            <label class="input-label">Verschil:</label>
+            <span class="formatted-output-result">{{formattedArray[13]}}</span>
+        </div>
+    </div>
+</body>
+
+</html>

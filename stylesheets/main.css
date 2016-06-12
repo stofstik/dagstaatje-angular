@@ -1,0 +1,18 @@
+.input-label {
+    width: 100px;
+}
+
+.formatted-output-input {
+    white-space: pre;
+    font-family: monospace;
+}
+
+.formatted-output-result {
+    white-space: pre;
+    font-family: monospace;
+    margin-left: 68px;
+}
+
+.input-number {
+    width: 64px;
+}
