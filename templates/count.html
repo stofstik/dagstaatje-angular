@@ -1,0 +1,11 @@
+<div class="container" ng-controller="inputController">
+    <div class="row" ng-repeat="item in money">
+        <label class="input-label">{{item.prettyMultiplier}}:</label>
+        <input class="input-number" min="0" type="number" ng-model="item.amount" />
+        <span class="formatted-output-input">{{item.prettyResult}}</span>
+    </div>
+    <div class="row">
+        <label class="input-label">Totaal:</label>
+        <span class="formatted-output-result">{{prettyTotal}}</span>
+    </div>
+</div>

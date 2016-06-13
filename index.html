@@ -12,78 +12,45 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.5.6/angular-route.min.js"></script>
     <script src="libraries/accounting.min.js"></script>
     <script src="libraries/accounting-settings.js"></script>
     <script src="app.js"></script>
+    <script src="routes.js"></script>
 </head>
 
 <body ng-controller="mainController">
-    <div class="container" ng-controller="inputController">
-        <h3>{{title}}</h3>
-        <div class="row">
-            <label class="input-label">Beginkas:</label>
-            <input class="input-number" min="0" type="number" ng-model="start"/>
-            <span class="formatted-output-input">{{formattedArray[0]}}</span>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">{{title}}</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#count">Tellen</a>
+                    </li>
+                    <li><a href="#input">Invoer</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <div class="row">
-            <label class="input-label">Extra in kas:</label>
-            <input class="input-number" min="0" type="number" ng-model="extra"/>
-            <span class="formatted-output-input">{{formattedArray[1]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Totaal in:</label>
-            <span class="formatted-output-result">{{formattedArray[2]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Omzet:</label>
-            <input class="input-number" min="0" type="number" ng-model="turnover"/>
-            <span class="formatted-output-input">{{formattedArray[3]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Pof:</label>
-            <input class="input-number" min="0" type="number" ng-model="bill"/>
-            <span class="formatted-output-input">{{formattedArray[4]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Pof betaald:</label>
-            <input class="input-number" min="0" type="number" ng-model="billPayed"/>
-            <span class="formatted-output-input">{{formattedArray[5]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Kassastrook:</label>
-            <span class="formatted-output-result">{{formattedArray[6]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Totaal in kas:</label>
-            <span class="formatted-output-result">{{formattedArray[7]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Uit kas:</label>
-            <input class="input-number" min="0" type="number" ng-model="out"/>
-            <span class="formatted-output-input">{{formattedArray[8]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">PIN:</label>
-            <input class="input-number" min="0" type="number" ng-model="pin"/>
-            <span class="formatted-output-input">{{formattedArray[9]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Totaal uit kas:</label>
-            <span class="formatted-output-result">{{formattedArray[10]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Kas moet zijn:</label>
-            <span class="formatted-output-result">{{formattedArray[11]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Geteld:</label>
-            <input class="input-number" min="0" type="number" ng-model="counted"/>
-            <span class="formatted-output-input">{{formattedArray[12]}}</span>
-        </div>
-        <div class="row">
-            <label class="input-label">Verschil:</label>
-            <span class="formatted-output-result">{{formattedArray[13]}}</span>
-        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+
+        <div ng-view class="main-view"></div>
+
     </div>
 </body>
 
