@@ -17,10 +17,13 @@
     <script src="libraries/accounting-settings.js"></script>
     <script src="app.js"></script>
     <script src="routes.js"></script>
+    <script src="controllers/nav-controller.js"></script>
+    <script src="controllers/count-controller.js"></script>
+    <script src="controllers/input-controller.js"></script>
 </head>
 
-<body ng-controller="mainController">
-    <nav class="navbar navbar-default">
+<body>
+    <nav class="navbar navbar-default" ng-controller="navController">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -37,9 +40,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#count">Tellen</a>
-                    </li>
-                    <li><a href="#input">Invoer</a>
+                    <li ng-class="{ 'active': isActive('/count') }"><a href="#count">Tellen<span class="sr-only">(current)</span></a></li>
+                    <li ng-class="{ 'active': isActive('/input') }"><a href="#input">Invoer</a></li>
                     </li>
                 </ul>
             </div>
