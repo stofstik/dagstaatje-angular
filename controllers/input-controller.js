@@ -1,6 +1,6 @@
 dagstaatjeApp.controller('inputController', [
-    '$scope',
-    function inputController($scope) {
+    '$scope', 'dagstaatjeService',
+    function inputController($scope, dagstaatjeService) {
 
         // Inputs
         $scope.start = 0;
@@ -10,7 +10,7 @@ dagstaatjeApp.controller('inputController', [
         $scope.billPayed = 0;
         $scope.out = 0;
         $scope.pin = 0;
-        $scope.counted = 0;
+        $scope.counted = dagstaatjeService.total;
 
 
         $scope.$watchGroup(

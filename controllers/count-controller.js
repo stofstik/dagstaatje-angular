@@ -1,4 +1,4 @@
-dagstaatjeApp.controller('countController', ['$scope', function countController($scope) {
+dagstaatjeApp.controller('countController', ['$scope', 'dagstaatjeService', function countController($scope, dagstaatjeService) {
 
     $scope.money = [{
         multiplier: 500,
@@ -111,6 +111,8 @@ dagstaatjeApp.controller('countController', ['$scope', function countController(
         // set scope values
         $scope.money = money;
         $scope.prettyTotal = pretty[pretty.length - 1];
+        // set global total counted for use in other sections
+        dagstaatjeService.total = total;
     }
 
     // put all multipliers in array, pass array to accountingJs
