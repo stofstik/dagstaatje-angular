@@ -1,11 +1,28 @@
 <div class="container" ng-controller="inputController">
-    <div class="row" ng-repeat="item in money">
-        <label class="input-label">{{item.prettyMultiplier}}:</label>
-        <input class="input-number" min="0" type="number" ng-model="item.amount" />
-        <span class="formatted-output-input">{{item.prettyResult}}</span>
+
+
+    <div ng-repeat="item in money">
+        <div class="row counter">
+            <div class="counter-input">
+                <div class="correction col-xs-4">
+                    <label class="counter-input__label">{{item.prettyMultiplier}}:</label>
+                </div>
+                <div class="correction col-xs-4">
+                    <input class="counter-input__input--number" min="0" type="number" ng-model="item.amount" />
+                </div>
+                <div class="counter-output col-xs-4">
+                    <span class="counter-output__output">{{item.prettyResult}}</span>
+                </div>
+
+            </div>
+
+        </div>
     </div>
+    <hr class="counter-input__label--split">
     <div class="row result">
-        <label class="input-label">Totaal:</label>
-        <span class="formatted-output-result">{{prettyTotal}}</span>
+        <div class="result-output col-xs-12">
+            <label class="result-output__output-label">Totaal:</label>
+            <span class="result-output__output-result">{{prettyTotal}}</span>
+        </div>
     </div>
 </div>

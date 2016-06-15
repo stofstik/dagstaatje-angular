@@ -1,23 +1,89 @@
-.input-label {
-    width: 100px;
+//    Gloabal
+.center{
+    display: block;
+    margin:0 auto;
 }
+* {
+    font-size: 14px;
+}
+.correction {
+    padding-right: 0;
+    padding-left: 0;
+}
+body {
+    background-color: #304D5B !important;
+}
+//    Page
 
-.formatted-output-input {
+.result {}
+.counter {}
+.counter-input {}
+.counter-input__label {
+    padding: 2px 0px;
+    display: block;
+    margin: 0 auto;
+    width:auto;
+    color: white;
+}
+.counter-input__input--number {
+    width: 100%;
+
+    color: #304D5B;
+}
+.counter-output__output {
     white-space: pre;
+    margin: 2px 0px;
+    color: white;
+
     font-family: monospace;
 }
+.counter-input__label--split{
+}
+.result {}
+.result-output {
+    margin-top: 20px;
 
-.formatted-output-result {
+    color: white;
+
+    font-family: monospace;
+}
+.result-output__output-result {
     white-space: pre;
-    font-family: monospace;
-    margin-left: 74px;
-}
 
-.input-number {
-    width: 70px;
     font-family: monospace;
 }
+.result-output {}
 
-.result {
-    padding-top: 3px;
+//    Navigation
+.navbar{
+    background-color:red;
+}
+/* Extra small devices (phones, less than 768px) */
+
+
+/* No media query since this is the default in Bootstrap */
+
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    * {
+        font-size: 18px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    * {
+        font-size: 20px;
+    }
 }
