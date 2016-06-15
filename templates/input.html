@@ -1,12 +1,12 @@
 <div class="container" ng-controller="inputController">
     <div class="row">
         <label class="input-label">Beginkas:</label>
-        <input class="input-number" min="0" type="number" ng-model="start" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.start" />
         <span class="formatted-output-input">{{formattedArray[0]}}</span>
     </div>
     <div class="row">
         <label class="input-label">Extra in kas:</label>
-        <input class="input-number" min="0" type="number" ng-model="extra" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.extra" />
         <span class="formatted-output-input">{{formattedArray[1]}}</span>
     </div>
     <div class="row result">
@@ -15,17 +15,17 @@
     </div>
     <div class="row">
         <label class="input-label">Omzet:</label>
-        <input class="input-number" min="0" type="number" ng-model="turnover" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.turnover" />
         <span class="formatted-output-input">{{formattedArray[3]}}</span>
     </div>
     <div class="row">
         <label class="input-label">Pof:</label>
-        <input class="input-number" min="0" type="number" ng-model="bill" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.bill" />
         <span class="formatted-output-input">{{formattedArray[4]}}</span>
     </div>
     <div class="row">
         <label class="input-label">Pof betaald:</label>
-        <input class="input-number" min="0" type="number" ng-model="billPayed" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.billPayed" />
         <span class="formatted-output-input">{{formattedArray[5]}}</span>
     </div>
     <div class="row result">
@@ -38,12 +38,12 @@
     </div>
     <div class="row">
         <label class="input-label">Uit kas:</label>
-        <input class="input-number" min="0" type="number" ng-model="out" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.out" />
         <span class="formatted-output-input">{{formattedArray[8]}}</span>
     </div>
     <div class="row">
         <label class="input-label">PIN:</label>
-        <input class="input-number" min="0" type="number" ng-model="pin" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.pin" />
         <span class="formatted-output-input">{{formattedArray[9]}}</span>
     </div>
     <div class="row result">
@@ -56,7 +56,7 @@
     </div>
     <div class="row">
         <label class="input-label">Geteld:</label>
-        <input class="input-number" min="0" type="number" ng-model="counted" />
+        <input class="input-number" min="0" type="number" ng-model="$storage.inputCounted" />
         <span class="formatted-output-input">{{formattedArray[12]}}</span>
     </div>
     <div class="row result">

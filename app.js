@@ -1,1 +1,1 @@
-var dagstaatjeApp = angular.module('dagstaatjeApp', ['ngRoute']);
+var dagstaatjeApp = angular.module('dagstaatjeApp', ['ngRoute', 'ngAnimate', 'ngStorage']);

@@ -1,93 +1,95 @@
-dagstaatjeApp.controller('countController', ['$scope', 'dagstaatjeService', function countController($scope, dagstaatjeService) {
+dagstaatjeApp.controller('countController', ['$scope', '$localStorage', function countController($scope, $localStorage) {
 
-    $scope.money = [{
-        multiplier: 500,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 200,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 100,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 50,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 20,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 10,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 5,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 2,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 1,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 0.5,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 0.2,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 0.1,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, {
-        multiplier: 0.05,
-        amount: 0,
-        prettyMultiplier: "pretM",
-        result: 0,
-        prettyResult: "pretR"
-    }, ];
+    $scope.$storage = $localStorage.$default({
+        money: [{
+            multiplier: 500,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 200,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 100,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 50,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 20,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 10,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 5,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 2,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 1,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 0.5,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 0.2,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 0.1,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, {
+            multiplier: 0.05,
+            amount: 0,
+            prettyMultiplier: "pretM",
+            result: 0,
+            prettyResult: "pretR"
+        }, ]
+    });
 
     $scope.prettyTotal = "pretT";
 
-    $scope.$watch('money', function() {
+    $scope.$watch('$storage.money', function() {
         prettifyResult();
     }, true);
 
     function prettifyResult() {
-        var money = $scope.money; // work with local variable so we dont $watch doesn't trigger until done
+        var money = $scope.$storage.money; // work with local variable so we dont $watch doesn't trigger until done
         var ugly = [];
         var pretty = [];
         var total = 0;
@@ -109,16 +111,16 @@ dagstaatjeApp.controller('countController', ['$scope', 'dagstaatjeService', func
             money[item].prettyResult = pretty[item];
         }
         // set scope values
-        $scope.money = money;
+        $scope.$storage.money = money;
         $scope.prettyTotal = pretty[pretty.length - 1];
-        // set global total counted for use in other sections
-        dagstaatjeService.counted = total;
+        $scope.$storage.countCounted = total;
+        $scope.$storage.inputCounted = total;
     }
 
     // put all multipliers in array, pass array to accountingJs
     // for each formatted item put it in the pretty field
     (function prettifyMultiplier() {
-        var money = $scope.money;
+        var money = $scope.$storage.money;
         var ugly = [];
         var pretty = [];
         for (var item in money) {
@@ -128,7 +130,7 @@ dagstaatjeApp.controller('countController', ['$scope', 'dagstaatjeService', func
         for (item in money) {
             money[item].prettyMultiplier = pretty[item];
         }
-        $scope.money = money;
+        $scope.$storage.money = money;
     })();
 
 }]);
