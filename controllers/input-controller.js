@@ -10,7 +10,7 @@ dagstaatjeApp.controller('inputController', [
         $scope.billPayed = 0;
         $scope.out = 0;
         $scope.pin = 0;
-        $scope.counted = dagstaatjeService.total;
+        $scope.counted = dagstaatjeService.counted || 0;
 
 
         $scope.$watchGroup(

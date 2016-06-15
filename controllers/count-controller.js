@@ -112,7 +112,7 @@ dagstaatjeApp.controller('countController', ['$scope', 'dagstaatjeService', func
         $scope.money = money;
         $scope.prettyTotal = pretty[pretty.length - 1];
         // set global total counted for use in other sections
-        dagstaatjeService.total = total;
+        dagstaatjeService.counted = total;
     }
 
     // put all multipliers in array, pass array to accountingJs
