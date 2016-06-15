@@ -113,7 +113,8 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', function
         // set scope values
         $scope.$storage.money = money;
         $scope.prettyTotal = pretty[pretty.length - 1];
-        $scope.$storage.totalCounted = total;
+totalCounted        $scope.$storage.countCounted = total;
+        $scope.$storage.inputCounted = total;
     }
 
     // put all multipliers in array, pass array to accountingJs
