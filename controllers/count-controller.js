@@ -113,7 +113,7 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', function
         // set scope values
         $scope.$storage.money = money;
         $scope.prettyTotal = pretty[pretty.length - 1];
-totalCounted        $scope.$storage.countCounted = total;
+        $scope.$storage.countCounted = total;
         $scope.$storage.inputCounted = total;
     }
 
