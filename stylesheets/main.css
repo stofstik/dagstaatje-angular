@@ -1,4 +1,7 @@
 //    Gloabal
+.container{
+    padding:20px;
+}
 .center{
     display: block;
     margin:0 auto;
@@ -7,8 +10,7 @@
     font-size: 14px;
 }
 .correction {
-    padding-right: 0;
-    padding-left: 0;
+
 }
 body {
     background-color: #304D5B !important;

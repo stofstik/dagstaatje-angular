@@ -1,122 +1,122 @@
 <div class="container" ng-controller="inputController">
     <div class="row">
 
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Beginkas:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="start" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[0]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[0]}}</span></div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Extra in kas:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="extra" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[1]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[1]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label counter-input__label--split">Totaal in:</label>
         </div>
-        <div class="col-xs-4 col-xs-offset-4 col-xs-4"><span class="counter-output__output ">{{formattedArray[2]}}</span></div>
+        <div class="small-4 columns col-xs-offset-4 small-4 columns"><span class="counter-output__output ">{{formattedArray[2]}}</span></div>
 
     </div>
     <hr class="counter-input__label--split">
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Omzet:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="turnover" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[3]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[3]}}</span></div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Pof:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="bill" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[4]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[4]}}</span></div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Pof betaald:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="billPayed" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[5]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[5]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Kassastrook:</label>
         </div>
-        <div class="col-xs-offset-4 col-xs-4"><span class="counter-output__output ">{{formattedArray[6]}}</span></div>
+        <div class="col-xs-offset-4 small-4 columns"><span class="counter-output__output ">{{formattedArray[6]}}</span></div>
 
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label ">Totaal in kas:</label>
         </div>
-        <div class="col-xs-4 col-xs-offset-4"><span class="counter-output__output ">{{formattedArray[7]}}</span></div>
+        <div class="small-4 columns col-xs-offset-4"><span class="counter-output__output ">{{formattedArray[7]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Uit kas:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="out" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[8]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[8]}}</span></div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">PIN:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="pin" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[9]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[9]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Totaal uit kas:</label>
         </div>
-        <div class="col-xs-offset-4 col-xs-4"><span class="counter-output__output">{{formattedArray[10]}}</span></div>
+        <div class="col-xs-offset-4 small-4 columns"><span class="counter-output__output">{{formattedArray[10]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Kas moet zijn:</label>
         </div>
-        <div class="col-xs-offset-4 col-xs-4"><span class="counter-output__output">{{formattedArray[11]}}</span></div>
+        <div class="col-xs-offset-4 small-4 columns"><span class="counter-output__output">{{formattedArray[11]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Geteld:</label>
         </div>
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <input class="counter-input__input--number" min="0" type="number" ng-model="counted" />
         </div>
-        <div class="col-xs-4"><span class="counter-output__output">{{formattedArray[12]}}</span></div>
+        <div class="small-4 columns"><span class="counter-output__output">{{formattedArray[12]}}</span></div>
     </div>
     <hr class="counter-input__label--split">
     <div class="row result">
-        <div class="col-xs-4">
+        <div class="small-4 columns">
             <label class="counter-input__label">Verschil:</label>
         </div>
-        <div class="col-xs-offset-4 col-xs-4"><span class="counter-output__output">{{formattedArray[13]}}</span></div>
+        <div class="col-xs-offset-4 small-4 columns"><span class="counter-output__output">{{formattedArray[13]}}</span></div>
     </div>
 </div>
