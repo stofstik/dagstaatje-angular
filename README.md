@@ -1,4 +1,11 @@
-npm install
-npm run dev
+# Angular Dagstaatje
 
-for production, run: npm run build and host build directory
+### Devopment server:
+
+- ```npm install```
+- ```npm run dev```
+
+### Build for production:
+
+- ```npm run build```
+- ```host your build directory somewhere...```
