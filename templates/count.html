@@ -1,11 +1,13 @@
-<div class="container" ng-controller="inputController">
-    <div class="row" ng-repeat="item in $storage.money">
-        <label class="input-label">{{item.prettyMultiplier}}:</label>
-        <input class="input-number" min="0" type="number" ng-model="item.amount" />
-        <span class="formatted-output-input">{{item.prettyResult}}</span>
-    </div>
-    <div class="row result">
-        <label class="input-label">Totaal:</label>
-        <span class="formatted-output-result">{{prettyTotal}}</span>
+<div class="container" ng-controller="countController">
+    <div ng-repeat="item in $storage.count.fields">
+        <div ng-if="item.isInput === true" class="row">
+            <label class="input-label">{{item.label}}</label>
+            <input class="input-number" min="0" type="number" ng-model="item.amount" />
+            <span class="formatted-output-input">{{item.prettyResult}}</span>
+        </div>
+        <div ng-if="item.isInput === false" class="row result">
+            <label class="input-label">{{item.label}}</label>
+            <span class="formatted-output-result">{{item.prettyResult}}</span>
+        </div>
     </div>
 </div>
