@@ -1,15 +1,15 @@
-<div class="container" ng-controller="inputController">
+<div class="container page" ng-controller="inputController">
 
 
     <div ng-repeat="item in money">
         <div class="row counter">
-            <div class="correction small-4 columns">
+            <div class="small-4 columns center">
                 <label class="counter-input__label">{{item.prettyMultiplier}}:</label>
             </div>
-            <div class="correction small-4 columns">
+            <div class="small-4 columns">
                 <input class="counter-input__input--number" min="0" type="number" ng-model="item.amount" />
             </div>
-            <div class="counter-output small-4 columns">
+            <div class="counter-output small-4 columns center">
                 <span class="counter-output__output">{{item.prettyResult}}</span>
             </div>
 

@@ -1,34 +1,35 @@
-//    Gloabal
-.container{
-    padding:20px;
-}
-.center{
-    display: block;
-    margin:0 auto;
-}
-* {
-    font-size: 14px;
-}
-.correction {
-
+/*Global*/
+.page{
+    padding:50px 0px;
 }
 body {
     background-color: #304D5B !important;
 }
-//    Page
+*{
+    outline:1px solid red;
+}
+/*Page*/
 
 .result {}
 .counter {}
 .counter-input {}
 .counter-input__label {
     padding: 2px 0px;
-    display: block;
+    text-align:left;
     margin: 0 auto;
-    width:auto;
     color: white;
+    display:inline-block;
+    width:150px;
+
+}
+.counter-input__label, .counter-output__output{
+    font-family: monospace;
+    font-size:16px;
 }
 .counter-input__input--number {
     width: 100%;
+    display: block;
+    margin: 0 auto;
 
     color: #304D5B;
 }
@@ -36,6 +37,7 @@ body {
     white-space: pre;
     margin: 2px 0px;
     color: white;
+    display: inline-block;
 
     font-family: monospace;
 }
@@ -69,7 +71,7 @@ body {
 /* Small devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    * {
+    *, label {
         font-size: 16px;
     }
 }
@@ -77,7 +79,7 @@ body {
 /* Medium devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-    * {
+    *, label {
         font-size: 18px;
     }
 }
@@ -85,7 +87,7 @@ body {
 /* Large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
-    * {
+    *, label {
         font-size: 20px;
     }
 }
