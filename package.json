@@ -1,0 +1,25 @@
+{
+    "name": "dagstaatje",
+    "version": "0.0.1",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "lite-server -c bs-config.json",
+        "build": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stofstik/dagstaatje-angular.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "3.9.1",
+        "lite-server": "3.3.12"
+    },
+    "bugs": {
+        "url": "https://github.com/stofstik/dagstaatje-angular/issues"
+    },
+    "homepage": "https://github.com/stofstik/dagstaatje-angular#readme"
+}
