@@ -9,7 +9,11 @@ body {
     outline:1px solid red;
 }
 /*Page*/
-
+.center{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+}
 .result {}
 .counter {}
 .counter-input {}
@@ -19,7 +23,7 @@ body {
     margin: 0 auto;
     color: white;
     display:inline-block;
-    width:150px;
+    width:180px;
 
 }
 .counter-input__label, .counter-output__output{
@@ -28,8 +32,6 @@ body {
 }
 .counter-input__input--number {
     width: 100%;
-    display: block;
-    margin: 0 auto;
 
     color: #304D5B;
 }
@@ -38,6 +40,7 @@ body {
     margin: 2px 0px;
     color: white;
     display: inline-block;
+    width:150px;
 
     font-family: monospace;
 }
