@@ -1,5 +1,5 @@
 .input-label {
-    width: 100px;
+    text-align: right;
 }
 
 .formatted-output-input {
@@ -10,14 +10,16 @@
 .formatted-output-result {
     white-space: pre;
     font-family: monospace;
-    margin-left: 74px;
 }
 
 .input-number {
-    width: 70px;
     font-family: monospace;
 }
 
 .result {
-    padding-top: 3px;
+}
+
+.row {
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
