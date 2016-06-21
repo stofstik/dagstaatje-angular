@@ -8,7 +8,6 @@ dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsS
     });
 
     $scope.$watch('$storage.input.fields', function(newValue, oldValue) {
-        if (newValue === oldValue) return;
         console.log("$storage.input.fields changed...");
         recalc();
         prettifyAmount();
