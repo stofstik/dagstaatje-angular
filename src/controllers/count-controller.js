@@ -1,8 +1,9 @@
 dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsService', function countController($scope, $localStorage, fieldsService) {
+    $scope.pageClass = "count-page";
 
     $scope.$storage = $localStorage.$default({
         count: {
-            fields: fieldsService.GetMoneyFields()
+            fields: fieldsService.GetNewCountFields()
         }
     });
 

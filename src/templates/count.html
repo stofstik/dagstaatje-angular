@@ -1,13 +1,13 @@
-<div class="container" ng-controller="countController">
+<div class="content" ng-controller="countController">
     <div ng-repeat="item in $storage.count.fields">
         <div ng-if="item.isInput === true" class="row">
-            <label class="input-label col-xs-4 col-sm-3 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-3 col-lg-offset-3">{{item.label}}</label>
-            <input class="input-number col-xs-4 col-sm-3 col-md-2 col-lg-2" min="0" type="number" ng-model="item.amount" />
-            <span class="formatted-output-input col-xs-4 col-sm-4 col-md-2 col-lg-2">{{item.prettyResult}}</span>
+            <label>{{item.label}}</label>
+            <input min="0" type="number" ng-model="item.amount" />
+            <span>{{item.prettyResult}}</span>
         </div>
         <div ng-if="item.isInput === false" class="row result">
-            <label class="input-label col-xs-4 col-sm-3 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-3 col-lg-offset-3">{{item.label}}</label>
-            <span class="formatted-output-result col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xs-offset-4 col-sm-offset-3 col-md-offset-2 col-lg-offset-2">{{item.prettyResult}}</span>
+            <label>{{item.label}}</label>
+            <span class="formatted-output-result">{{item.prettyResult}}</span>
         </div>
     </div>
 </div>

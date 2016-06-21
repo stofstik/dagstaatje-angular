@@ -7,11 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/animations.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.6/angular-route.min.js"></script>
     <script src="//code.angularjs.org/1.5.6/angular-animate.js"></script>
@@ -21,6 +17,7 @@
     <script src="app.js"></script>
     <script src="routes.js"></script>
     <script src="services/fields-service.js"></script>
+    <script src="services/color-service.js"></script>
     <script src="controllers/nav-controller.js"></script>
     <script src="controllers/splash-controller.js"></script>
     <script src="controllers/count-controller.js"></script>
@@ -28,37 +25,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default" ng-controller="navController">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/">{{title}}</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li ng-class="{ 'active': isActive('/count') }"><a href="#count">Tellen<span class="sr-only">(current)</span></a></li>
-                    <li ng-class="{ 'active': isActive('/input') }"><a href="#input">Invoer</a></li>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <div class="container-fluid">
-
-        <div ng-view class="main-view"></div>
-
+    <div class="my-navbar" ng-controller="navController">
+        <ul class="{{pageColor()}}">
+            <li class="count" ng-class="{ 'active-count': isActive('/count') }"><a class="my-navbar-button" href="#count">Tellen</a></li>
+            <li class="input" ng-class="{ 'active-input': isActive('/input') }"><a class="my-navbar-button" href="#input">Invoer</a></li>
+            <li class="clear"><button class="my-navbar-button" ng-click="clear()">Wissen</button></li>
+        </ul>
     </div>
+
+    <div class="page {{pageClass}}" ng-view class="main-view"></div>
+
 </body>
 
 </html>

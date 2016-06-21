@@ -1,6 +1,6 @@
-dagstaatjeApp.service('fieldsService', [function() {
+dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage) {
 
-    var money = [{
+    var defaultCountFields = [{
         label: '€ 500',
         multiplier: 500,
         amount: 0,
@@ -99,7 +99,7 @@ dagstaatjeApp.service('fieldsService', [function() {
         isInput: false
     }];
 
-    var input = [{
+    var defaultInputFields = [{
         label: 'Beginkas:',
         amount: 0,
         prettyAmount: "€ 0,00",
@@ -176,15 +176,26 @@ dagstaatjeApp.service('fieldsService', [function() {
         isInput: false
     }];
 
-    this.GetMoneyFields = function() {
-        return money;
+    this.GetNewCountFields = function() {
+        return angular.copy(defaultCountFields);
     };
-    this.GetInputFields = function() {
-        return input;
+
+    this.GetNewInputFields = function() {
+        return angular.copy(defaultInputFields);
     };
+
+    this.ResetCountFields = function() {
+        $localStorage.count.fields = this.GetNewCountFields();
+    };
+
+    this.ResetInputFields = function() {
+        $localStorage.input.fields = this.GetNewInputFields();
+    };
+
     this.UpdateCounted = function(counted) {
-        this.GetByLabel(input, 'Geteld:').amount = counted;
+        this.GetByLabel($localStorage.input.fields, 'Geteld:').amount = counted;
     };
+
     this.GetByLabel = function(fields, label){
         for(var item in fields){
             if(fields[item].label === label){
@@ -192,6 +203,5 @@ dagstaatjeApp.service('fieldsService', [function() {
             }
         }
     };
-
 
 }]);

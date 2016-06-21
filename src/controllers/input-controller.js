@@ -1,12 +1,14 @@
 dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsService', function inputController($scope, $localStorage, fieldsService) {
+    $scope.pageClass = "input-page";
 
     $scope.$storage = $localStorage.$default({
         input: {
-            fields: fieldsService.GetInputFields()
+            fields: fieldsService.GetNewInputFields()
         }
     });
 
     $scope.$watch('$storage.input.fields', function(newValue, oldValue) {
+        if (newValue === oldValue) return;
         console.log("$storage.input.fields changed...");
         recalc();
         prettifyAmount();

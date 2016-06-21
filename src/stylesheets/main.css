@@ -1,25 +1,123 @@
-.input-label {
-    text-align: right;
+html * {
+    font-size: 1em;
+    font-family: Arial;
 }
 
-.formatted-output-input {
-    white-space: pre;
-    font-family: monospace;
+body {
+    margin: 0;
 }
 
-.formatted-output-result {
-    white-space: pre;
-    font-family: monospace;
+.page {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .input-number {
     font-family: monospace;
 }
 
-.result {
-}
-
 .row {
     padding-top: 1px;
     padding-bottom: 1px;
+    height: 2em;
+    white-space: nowrap;
+}
+
+.row > label {
+    width: 6em;
+    display: inline-block;
+}
+
+.row > input {
+    white-space: pre;
+    font-family: monospace;
+    width: 6em;
+    height: 2em;
+}
+
+.row > span {
+    white-space: pre;
+    font-family: monospace;
+}
+
+.formatted-output-result {
+    margin-left: 6.6em;
+    white-space: pre;
+    font-family: monospace;
+}
+
+.my-navbar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-width: 20em;
+    overflow: hidden;
+}
+
+.my-navbar li {
+    float: left;
+}
+
+.my-navbar-button {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.my-navbar-color-count {
+    background-color: #e6f7ff;
+}
+
+.my-navbar-color-input {
+    background-color: #fff2e6;
+}
+.count :hover {
+    border-top-style: solid;
+    border-width: 2px;
+    border-color: #66ccff;
+}
+
+.input :hover {
+    border-top-style: solid;
+    border-width: 2px;
+    border-color: #ff9933;
+}
+
+.clear {
+    position: absolute;
+    right: 0;
+}
+
+.clear :hover {
+    border-top-style: solid;
+    border-width: 2px;
+    border-color: #111;
+}
+
+.active-count {
+    background-color: #cceeff;
+}
+
+.active-input {
+    background-color: #ffe6cc;
+}
+
+.count-page {
+    background-color: #cceeff;
+}
+
+.input-page {
+    background-color: #ffe6cc;
 }
