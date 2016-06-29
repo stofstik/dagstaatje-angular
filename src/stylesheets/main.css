@@ -25,16 +25,10 @@ body {
     }
 }
 
-.input-number {
-    font-family: monospace;
-}
-
 .row {
-    vertical-align: middle;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    height: 23px;
+    padding-bottom: 4px;
     white-space: nowrap;
+    line-height: 38px;
 }
 
 .row > label {
@@ -45,16 +39,21 @@ body {
 .row > input {
     white-space: pre;
     font-family: monospace;
+    height: 32px;
     width: 20%;
 }
 
 .row > span {
     white-space: pre;
+    padding-left: 4px;
+    width: 47%;
     font-family: monospace;
 }
 
 .formatted-output-result {
-    padding-left: 20%;
+    margin-left: 20%;
+    padding-left: 12px !important;
+    position: relative;
 }
 
 .my-navbar > ul {
