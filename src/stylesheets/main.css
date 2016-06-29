@@ -11,12 +11,18 @@ body {
     position: absolute;
     top: 48px;
     left: 0;
-    padding-top: 1em;
     right: 0;
-    bottom: 0;
+    bottom: 0px;
+    padding-top: 12px;
+    padding-left: 12px;
 }
 
-.content {
+/* Create some padding for high widths */
+@media (min-width: 600px) {
+    .page {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
 }
 
 .input-number {
@@ -27,20 +33,19 @@ body {
     vertical-align: middle;
     padding-top: 1px;
     padding-bottom: 1px;
-    line-height: 2em;
+    height: 23px;
     white-space: nowrap;
 }
 
 .row > label {
-    width: 6em;
+    width: 33%;
     display: inline-block;
 }
 
 .row > input {
     white-space: pre;
     font-family: monospace;
-    width: 6em;
-    height: 2em;
+    width: 20%;
 }
 
 .row > span {
@@ -49,22 +54,29 @@ body {
 }
 
 .formatted-output-result {
-    margin-left: 6.6em;
-    white-space: pre;
-    font-family: monospace;
+    padding-left: 20%;
 }
 
 .my-navbar > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    min-width: 20em;
     overflow: hidden;
 }
 
 .my-navbar li {
     float: left;
 }
+
+.my-navbar-color-count {
+    background-color: #e6f7ff;
+}
+
+.my-navbar-color-input {
+    background-color: #fff2e6;
+}
+
+/* BUTTONS */
 
 .my-navbar-button {
     display: inline-block;
@@ -76,13 +88,6 @@ body {
     border: none;
 }
 
-.my-navbar-color-count {
-    background-color: #e6f7ff;
-}
-
-.my-navbar-color-input {
-    background-color: #fff2e6;
-}
 .count :hover {
     border-top-style: solid;
     border-width: 2px;

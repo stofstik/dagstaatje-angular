@@ -1,9 +1,5 @@
-dagstaatjeApp.config(function($routeProvider) {
+dagstaatjeApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'templates/splash.html',
-            controller: 'splashController'
-        })
         .when('/count', {
             templateUrl: 'templates/count.html',
             controller: 'countController'
@@ -11,7 +7,8 @@ dagstaatjeApp.config(function($routeProvider) {
         .when('/input', {
             templateUrl: 'templates/input.html',
             controller: 'inputController'
-        });
-});
+        })
+        .otherwise('/count');
+}]);
 
 

@@ -1,11 +1,11 @@
-<div class="content" ng-controller="countController">
+<div class="page {{pageClass}} main-view" ng-controller="countController">
     <div ng-repeat="item in $storage.count.fields">
         <div ng-if="item.isInput === true" class="row">
             <label>{{item.label}}</label>
             <input min="0" type="number" ng-model="item.amount" />
             <span>{{item.prettyResult}}</span>
         </div>
-        <div ng-if="item.isInput === false" class="row result">
+        <div ng-if="item.isInput === false" class="row">
             <label>{{item.label}}</label>
             <span class="formatted-output-result">{{item.prettyResult}}</span>
         </div>
