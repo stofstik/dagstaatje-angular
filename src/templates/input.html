@@ -1,13 +1,15 @@
-<div class="page {{pageClass}} main-view" ng-controller="inputController">
-    <div ng-repeat="item in $storage.input.fields">
-        <div ng-if="item.isInput === true" class="row">
-            <label>{{item.label}}</label>
-            <input min="0" type="number" ng-model="item.amount" />
-            <span class="formatted-output-input">{{item.prettyAmount}}</span>
-        </div>
-        <div ng-if="item.isInput === false" class="row">
-            <label>{{item.label}}</label>
-            <span class="formatted-output-result">{{item.prettyAmount}}</span>
+<div class="{{mainViewColor}} main-view" ng-controller="inputController">
+    <div class="container">
+        <div ng-repeat="item in $storage.input.fields">
+            <div ng-if="item.isInput === true" class="row">
+                <label>{{item.label}}</label>
+                <input min="0" type="number" ng-model="item.amount" />
+                <span class="formatted-output-input">{{item.prettyAmount}}</span>
+            </div>
+            <div ng-if="item.isInput === false" class="row">
+                <label>{{item.label}}</label>
+                <span class="formatted-output-result">{{item.prettyAmount}}</span>
+            </div>
         </div>
     </div>
 </div>

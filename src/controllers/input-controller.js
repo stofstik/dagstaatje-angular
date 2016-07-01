@@ -1,5 +1,5 @@
 dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsService', function inputController($scope, $localStorage, fieldsService) {
-    $scope.pageClass = "input-page";
+    $scope.mainViewColor = "input-view-color";
 
     $scope.$storage = $localStorage.$default({
         input: {

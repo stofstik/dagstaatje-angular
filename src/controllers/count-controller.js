@@ -1,11 +1,17 @@
 dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsService', function countController($scope, $localStorage, fieldsService) {
-    $scope.pageClass = "count-page";
+    $scope.mainViewColor = "count-view-color";
 
     $scope.$storage = $localStorage.$default({
         count: {
             fields: fieldsService.GetNewCountFields()
         }
     });
+
+    $scope.hasAutoFocus = function(multiplier) {
+        if(multiplier === 50) {
+            return 'autofocus';
+        }
+    };
 
     $scope.$watch('$storage.count.fields', function(newValue, oldValue) {
         if (newValue === oldValue) return;

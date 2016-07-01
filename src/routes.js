@@ -8,6 +8,10 @@ dagstaatjeApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'templates/input.html',
             controller: 'inputController'
         })
+        .when('/settings', {
+            templateUrl: 'templates/settings.html',
+            controller: 'settingsController'
+        })
         .otherwise('/count');
 }]);
 

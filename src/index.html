@@ -6,6 +6,7 @@
     <title>Laurierboom Dagstaatje</title>
 
     <link rel="stylesheet" media="screen" href="stylesheets/main.css">
+    <link rel="stylesheet" href="libraries/font-awesome-4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/animations.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -22,6 +23,7 @@
     <script src="controllers/splash-controller.js"></script>
     <script src="controllers/count-controller.js"></script>
     <script src="controllers/input-controller.js"></script>
+    <script src="controllers/settings-controller.js"></script>
 </head>
 
 <body>
@@ -29,7 +31,10 @@
         <ul class="{{pageColor()}}">
             <li class="count" ng-class="{ 'active-count': isActive('/count') }"><a class="my-navbar-button" href="#count">Tellen</a></li>
             <li class="input" ng-class="{ 'active-input': isActive('/input') }"><a class="my-navbar-button" href="#input">Invoer</a></li>
-            <li class="clear"><button class="my-navbar-button" ng-click="clear()">Wissen</button></li>
+            <div class="navbar-right">
+                <li class="clear"><i class="my-navbar-button fa fa-trash" ng-click="clear()"></i></li>
+                <li class="settings" ng-class="{ 'active-settings': isActive('/settings') }"><a class="my-navbar-button" href="#settings"><i class="fa fa-cog"></i></a></li>
+            </div>
         </ul>
     </div>
 

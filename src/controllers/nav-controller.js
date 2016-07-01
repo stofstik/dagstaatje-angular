@@ -10,6 +10,8 @@ dagstaatjeApp.controller('navController', ['$scope', '$location', 'fieldsService
             return 'my-navbar-color-count';
         } else if($location.path() === '/input') {
             return 'my-navbar-color-input';
+        } else if($location.path() === '/settings') {
+            return 'my-navbar-color-settings';
         }
     };
 
