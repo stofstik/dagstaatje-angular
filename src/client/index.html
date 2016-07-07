@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>Laurierboom Dagstaatje</title>
+    <title>Dagstaatje</title>
 
     <link rel="stylesheet" media="screen" href="stylesheets/main.css">
     <link rel="stylesheet" href="libraries/font-awesome-4.6.3/css/font-awesome.min.css">
@@ -19,6 +19,7 @@
     <script src="routes.js"></script>
     <script src="services/fields-service.js"></script>
     <script src="services/color-service.js"></script>
+    <script src="services/comm-service.js"></script>
     <script src="controllers/nav-controller.js"></script>
     <script src="controllers/splash-controller.js"></script>
     <script src="controllers/count-controller.js"></script>
@@ -32,6 +33,7 @@
             <li class="count" ng-class="{ 'active-count': isActive('/count') }"><a class="my-navbar-button" href="#count">Tellen</a></li>
             <li class="input" ng-class="{ 'active-input': isActive('/input') }"><a class="my-navbar-button" href="#input">Invoer</a></li>
             <div class="navbar-right">
+                <li class="send"><i class="my-navbar-button fa fa-send" ng-click="send()"></i></li>
                 <li class="clear"><i class="my-navbar-button fa fa-trash" ng-click="clear()"></i></li>
                 <li class="settings" ng-class="{ 'active-settings': isActive('/settings') }"><a class="my-navbar-button" href="#settings"><i class="fa fa-cog"></i></a></li>
             </div>

@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    height: 48px;
 }
 
 .my-navbar li {
@@ -39,30 +40,36 @@ body {
     padding: 15px 15px;
     text-decoration: none;
     background-color: transparent;
-    border: none;
+    cursor: pointer;
 }
-
-.count :hover {
+/*
+.count a:hover {
     border-top-style: solid;
     border-width: 2px;
     border-color: #66ccff;
 }
 
-.input :hover {
+.input a:hover {
     border-top-style: solid;
     border-width: 2px;
     border-color: #ff9933;
 }
 
-.navbar-right {
-    position: absolute;
-    right: 0;
+.settings a:hover {
+    border-top-style: solid;
+    border-width: 2px;
+    border-color: #333;
 }
 
-.clear :hover {
+.clear i:hover {
     border-top-style: solid;
     border-width: 2px;
     border-color: #111;
+}
+*/
+.navbar-right {
+    position: absolute;
+    right: 0;
 }
 
 .active-count {
@@ -138,4 +145,10 @@ body {
     margin-left: 20%;
     padding-left: 12px !important;
     position: relative;
+}
+
+.server-page {
+}
+
+.server-page > label
 }

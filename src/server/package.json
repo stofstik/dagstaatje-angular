@@ -1,0 +1,12 @@
+{
+    "name": "dagstaatje-server",
+    "version": "0.0.1",
+    "main": "server.js",
+    "devDependencies": {
+        "express": "latest",
+        "cors": "latest",
+        "body-parser": "latest",
+        "date-format": "latest",
+        "fs-extra": "latest"
+    }
+}

@@ -100,76 +100,91 @@ dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage)
     }];
 
     var defaultInputFields = [{
+        id: 'start',
         label: 'Beginkas:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'extra',
         label: 'Extra in kas:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'turnover',
         label: 'Omzet:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'tab',
         label: 'Pof:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'tabPaid',
         label: 'Pof betaald:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'report',
         label: 'Kassastrook:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: false
     }, {
+        id: 'totalIn',
         label: 'Totaal in kas:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: false
     }, {
+        id: 'out',
         label: 'Uit kas:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'pin',
         label: 'PIN:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'totalOut',
         label: 'Totaal uit kas:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: false
     }, {
+        id: 'result',
         label: 'Kas moet zijn:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: false
     }, {
+        id: 'counted',
         label: 'Geteld:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'difference',
         label: 'Verschil:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: false
     }, {
+        id: 'envelope',
         label: 'Envelop:',
         amount: 0,
         prettyAmount: "€ 0,00",
         isInput: true
     }, {
+        id: 'new',
         label: 'Nieuwe kas:',
         amount: 0,
         prettyAmount: "€ 0,00",

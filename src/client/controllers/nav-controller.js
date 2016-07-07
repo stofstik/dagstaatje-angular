@@ -1,4 +1,4 @@
-dagstaatjeApp.controller('navController', ['$scope', '$location', 'fieldsService', function navController($scope, $location, fieldsService) {
+dagstaatjeApp.controller('navController', ['$scope', '$location', 'fieldsService', 'commService', function navController($scope, $location, fieldsService, commService) {
     $scope.title = "Dagstaatje";
 
     $scope.isActive = function (viewLocation) {
@@ -21,5 +21,9 @@ dagstaatjeApp.controller('navController', ['$scope', '$location', 'fieldsService
         } else if($location.path() === '/input') {
             fieldsService.ResetInputFields();
         }
+    };
+
+    $scope.send = function() {
+        commService.sendData("Cheez!");
     };
 }]);
