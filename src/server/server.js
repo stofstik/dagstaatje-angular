@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-var DATE_FORMAT   = 'yyyy-mm-dd';
+var DATE_FORMAT   = 'd-m-yyyy';
 var PORT_NUMBER   = process.argv[2]; // get from command line arg
 var CSV_DIRECTORY = process.argv[3]; // get from command line arg
 var CSV_FILENAME  = 'dagstaat.csv';
@@ -43,7 +43,9 @@ app.post('/postDagstaatje', cors(corsOptions), (req, res, next) => {
 // Save a CSV file to disk
 function createCSV(data, callback) {
     var csvString = '';
-    csvString += dateFormat(new Date(), DATE_FORMAT);
+	var date = new Date();
+	date.setDate(date.getDate() - 1);
+    csvString += dateFormat(date, DATE_FORMAT);
     csvString += ',';
     csvString += data.start;
     csvString += ',';
