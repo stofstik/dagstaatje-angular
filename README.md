@@ -4,7 +4,7 @@
 
 - ```npm install```
 - ```npm run dev```
-- 
+
 ### Start src/server/server.js:
 
 - ```cd ./src/server```
