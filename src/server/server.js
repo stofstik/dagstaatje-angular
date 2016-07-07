@@ -19,10 +19,9 @@ var CSV_FILE      = path.join(CSV_DIRECTORY, CSV_FILENAME);
 
 app.use(bodyParser.json());
 
-// Only accept CORS on local host and local subnet
-// TODO use some sort of API key, this approach is very hacky :p
+// TODO use some sort of API key
 var corsOptions = {
-    'origin': /(localhost|192\.168\.*|10\.)/,
+    'origin': '*',
     'methods': 'GET'
 };
 // Enable pre-flight
