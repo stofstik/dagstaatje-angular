@@ -45,7 +45,7 @@ dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsS
         var totalInRegister  = start + extra + registerReceipt;
         var totalOut         = out + pin;
         var registerShouldBe = totalInRegister - totalOut;
-        var difference       = registerShouldBe - counted;
+        var difference       = counted - registerShouldBe;
         var newRegister      = counted - envelope;
 
         fieldsService.GetByLabel(fields, 'Kassastrook:').amount    = registerReceipt;
