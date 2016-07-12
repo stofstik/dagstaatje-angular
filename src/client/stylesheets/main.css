@@ -2,37 +2,47 @@ html * {
     font-size: 1em;
     font-family: Arial;
 }
-
 body {
     margin: 0;
 }
 
 /* THE NAVBAR */
-.my-navbar > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 48px;
-}
 
+.my-navbar {
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+}
+.my-navbar__left{
+    float: left;
+    margin-top:0;
+    margin-bottom:0;
+}
+.my-navbar__right{
+    float: right;
+    margin-top:0;
+    margin-bottom:0;
+}
+.my-navbar> ul {
+    list-style-type: none;
+    /*height: 48px;*/
+}
 .my-navbar li {
     float: left;
 }
-
 .my-navbar-color-count {
     background-color: #e6f7ff;
 }
-
 .my-navbar-color-input {
     background-color: #fff2e6;
 }
-
 .my-navbar-color-settings {
     background-color: #eaeaea;
 }
 
 /* NAVBAR BUTTONS */
+
 .my-navbar-button {
     display: inline-block;
     color: black;
@@ -42,6 +52,7 @@ body {
     background-color: transparent;
     cursor: pointer;
 }
+
 /*
 .count a:hover {
     border-top-style: solid;
@@ -67,88 +78,78 @@ body {
     border-color: #111;
 }
 */
+
 .navbar-right {
     position: absolute;
     right: 0;
+    top: 0;
 }
-
 .active-count {
     background-color: #cceeff;
 }
-
 .active-input {
     background-color: #ffe6cc;
 }
-
 .active-settings {
     background-color: #dedede;
 }
 
 /* CONTENT */
+
 .main-view {
     position: absolute;
-    top: 48px;
+    top: 0px;
+    padding-top: 50px;
     width: 100%;
     min-height: 100%;
 }
-
 .container {
     padding: 12px;
 }
 
 /* Create some padding for high widths */
+
 @media (min-width: 600px) {
     .container {
         margin-left: 25%;
         margin-right: 25%;
     }
 }
-
 .count-view-color {
     background-color: #cceeff;
 }
-
 .input-view-color {
     background-color: #ffe6cc;
 }
-
 .settings-view-color {
     background-color: #dedede;
 }
-
 .row {
     padding-bottom: 4px;
     white-space: nowrap;
     line-height: 38px;
 }
-
-.row > label {
+.row> label {
     width: 33%;
     display: inline-block;
 }
-
-.row > input {
+.row> input {
     white-space: pre;
     font-family: monospace;
     height: 32px;
     width: 20%;
 }
-
-.row > span {
+.row> span {
     white-space: pre;
     padding-left: 4px;
     width: 47%;
     font-family: monospace;
 }
-
 .formatted-output-result {
     margin-left: 20%;
     padding-left: 12px !important;
     position: relative;
 }
-
-.server-page {
-}
-
-.server-page > label
+.server-page {}
+.server-page> label
 }

@@ -28,16 +28,21 @@
 </head>
 
 <body>
-    <div class="my-navbar" ng-controller="navController">
-        <ul class="{{pageColor()}}">
+    <div class="my-navbar {{pageColor()}}" ng-controller="navController">
+        <ul class="my-navbar__left">
             <li class="count" ng-class="{ 'active-count': isActive('/count') }"><a class="my-navbar-button" href="#count">Tellen</a></li>
             <li class="input" ng-class="{ 'active-input': isActive('/input') }"><a class="my-navbar-button" href="#input">Invoer</a></li>
-            <div class="navbar-right">
+
+        </ul>
+        <ul class="my-navbar__right">
                 <li class="send"><i class="my-navbar-button fa fa-send" ng-click="send()"></i></li>
                 <li class="clear"><i class="my-navbar-button fa fa-trash" ng-click="clear()"></i></li>
                 <li class="settings" ng-class="{ 'active-settings': isActive('/settings') }"><a class="my-navbar-button" href="#settings"><i class="fa fa-cog"></i></a></li>
-            </div>
+
         </ul>
+        <div class="clear">
+
+        </div>
     </div>
 
     <ng-view></ng-view>
