@@ -3,97 +3,97 @@ dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage)
     var defaultCountFields = [{
         label: '€ 500',
         multiplier: 500,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 200',
         multiplier: 200,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 100',
         multiplier: 100,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 50',
         multiplier: 50,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 20',
         multiplier: 20,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 10',
         multiplier: 10,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 5',
         multiplier: 5,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 2',
         multiplier: 2,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 1',
         multiplier: 1,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 0.50',
         multiplier: 0.5,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 0.20',
         multiplier: 0.2,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 0.10',
         multiplier: 0.1,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: '€ 0.05',
         multiplier: 0.05,
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: true
     }, {
         label: 'Totaal:',
-        amount: 0,
+        amount: '',
         result: 0,
         prettyResult: "€ 0,00",
         isInput: false
