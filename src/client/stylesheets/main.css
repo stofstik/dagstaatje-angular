@@ -20,7 +20,7 @@ body {
     margin-bottom:0;
 }
 .my-navbar__right{
-    float: right;
+
     margin-top:0;
     margin-bottom:0;
 }
@@ -99,21 +99,29 @@ body {
 .main-view {
     position: absolute;
     top: 0px;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     width: 100%;
     min-height: 100%;
 }
 .container {
     padding: 12px;
 }
-
+.page-content{
+    padding-top:80px;
+}
 /* Create some padding for high widths */
+@media (min-width: 400px) {
+    .my-navbar__right{
+        float: right;
+    }
+}
 
 @media (min-width: 600px) {
     .container {
         margin-left: 25%;
         margin-right: 25%;
     }
+
 }
 .count-view-color {
     background-color: #cceeff;
