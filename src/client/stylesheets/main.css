@@ -1,30 +1,6 @@
-html * {
-    font-size: 1em;
-    font-family: Arial;
+.container{
 }
-body {
-    margin: 0;
-}
-
-/* THE NAVBAR */
-
-
-/* CONTENT */
-
-/* Create some padding for high widths */
-@media (min-width: 400px) {
-    .my-navbar__right{
-        float: right;
-    }
-}
-
-@media (min-width: 600px) {
-    .container {
-        margin-left: 25%;
-        margin-right: 25%;
-    }
-
-}
+/*
 .count-view-color {
     background-color: #cceeff;
 }
@@ -63,3 +39,4 @@ body {
 .server-page {}
 .server-page> label
 }
+*/
