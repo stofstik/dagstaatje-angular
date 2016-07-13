@@ -11,45 +11,30 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<script src="//code.angularjs.org/1.5.6/angular-route.min.js"></script>
-<script src="//code.angularjs.org/1.5.6/angular-animate.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-<!-- Angular Material Library -->
-<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-<script src="libraries/accounting.min.js"></script>
-<script src="libraries/accounting-settings.js"></script>
-<script src="app.js"></script>
-<script src="routes.js"></script>
-<script src="services/fields-service.js"></script>
-<script src="services/color-service.js"></script>
-<script src="services/comm-service.js"></script>
-<script src="controllers/nav-controller.js"></script>
-<script src="controllers/splash-controller.js"></script>
-<script src="controllers/count-controller.js"></script>
-<script src="controllers/input-controller.js"></script>
-<script src="controllers/settings-controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.5.6/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.5.6/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.js"></script>
+    <script src="libraries/accounting.min.js"></script>
+    <script src="libraries/accounting-settings.js"></script>
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+    <script src="services/fields-service.js"></script>
+    <script src="services/color-service.js"></script>
+    <script src="services/comm-service.js"></script>
+    <script src="controllers/nav-controller.js"></script>
+    <script src="controllers/splash-controller.js"></script>
+    <script src="controllers/count-controller.js"></script>
+    <script src="controllers/input-controller.js"></script>
+    <script src="controllers/settings-controller.js"></script>
 </head>
 
 <body>
-    <!--<div class="my-navbar {{pageColor()}}" ng-controller="navController">
-        <ul class="my-navbar__left">
-            <li class="count" ng-class="{ 'active-count': isActive('/count') }"><a class="my-navbar-button" href="#count">Tellen</a></li>
-            <li class="input" ng-class="{ 'active-input': isActive('/input') }"><a class="my-navbar-button" href="#input">Invoer</a></li>
-
-        </ul>
-        <ul class="my-navbar__right">
-                <li class="send"><i class="my-navbar-button fa fa-send" ng-click="send()"></i></li>
-                <li class="clear"><i class="my-navbar-button fa fa-trash" ng-click="clear()"></i></li>
-                <li class="settings" ng-class="{ 'active-settings': isActive('/settings') }"><a class="my-navbar-button" href="#settings"><i class="fa fa-cog"></i></a></li>
-
-        </ul>
-    </div>-->
-    <md-toolbar>
+    <md-toolbar ng-controller="navController">
         <div class="md-toolbar-tools">
             <md-button><a class="my-navbar-button" href="#count">Tellen</a></md-button>
             <md-button><a class="my-navbar-button" href="#input">Invoer</a></md-button>

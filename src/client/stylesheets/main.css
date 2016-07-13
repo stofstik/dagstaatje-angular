@@ -31,12 +31,11 @@
     width: 47%;
     font-family: monospace;
 }
+*/
 .formatted-output-result {
+    white-space: pre;
     margin-left: 20%;
     padding-left: 12px !important;
     position: relative;
+    font-family: monospace;
 }
-.server-page {}
-.server-page> label
-}
-*/
