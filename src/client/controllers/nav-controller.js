@@ -1,5 +1,5 @@
 dagstaatjeApp.controller('navController', ['$scope', '$location', 'fieldsService', 'commService', function navController($scope, $location, fieldsService, commService) {
-
+    $scope.currentNavItem = 'tellen';
     $scope.clear = function() {
         if($location.path() === '/count') {
             fieldsService.ResetCountFields();

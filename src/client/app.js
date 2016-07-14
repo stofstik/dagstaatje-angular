@@ -5,3 +5,4 @@ var dagstaatjeApp = angular.module('dagstaatjeApp', ['ngRoute', 'ngAnimate', 'ng
             .primaryPalette('green')
             .accentPalette('orange');
     });
+
