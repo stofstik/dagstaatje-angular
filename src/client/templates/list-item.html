@@ -1,0 +1,12 @@
+<md-list-item ng-if="item.isInput === true">
+    <md-input-container>
+        <label>{{item.label}}</label>
+        <input type="number" class="md-title" ng-attr-autofocus="{{hasAutoFocus(item.multiplier)}}" min="0" type="number" ng-model="item.amount" />
+    </md-input-container>
+    <span class="formatted-output-result md-title">{{item.prettyResult}}</span>
+</md-list-item>
+
+<md-list-item ng-if="item.isInput === false">
+    <label class="md-title">{{item.label}}</label>
+    <span class="formatted-output-result md-title">{{item.prettyResult}}</span>
+</md-list-item>

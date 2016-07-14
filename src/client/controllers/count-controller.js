@@ -1,11 +1,16 @@
 dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsService', function countController($scope, $localStorage, fieldsService) {
-    $scope.mainViewColor = "count-view-color";
 
     $scope.$storage = $localStorage.$default({
         count: {
             fields: fieldsService.GetNewCountFields()
         }
     });
+
+    // Sync $storage to local $scope fields for easy templating
+    // This way we can have one template for 'count' and 'input'
+    // both iterating over the 'fields' property instead of having two
+    // templates, one pointing to count.fields and one to input.fields
+    $scope.fields = $scope.$storage.count.fields;
 
     $scope.hasAutoFocus = function(multiplier) {
         if(multiplier === 50) {
@@ -45,6 +50,8 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsS
         }
         // set scope values)
         $scope.$storage.count.fields = fields;
+        $scope.fields = fields;
+
         // total counted has changed, so update the input.counted field as well
         fieldsService.UpdateCounted(total);
     }

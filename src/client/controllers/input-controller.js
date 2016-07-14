@@ -1,19 +1,25 @@
 dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsService', function inputController($scope, $localStorage, fieldsService) {
-    $scope.mainViewColor = "input-view-color";
 
+    // Set the default fields if none are found
     $scope.$storage = $localStorage.$default({
         input: {
             fields: fieldsService.GetNewInputFields()
         }
     });
 
+    // Sync $storage to local $scope fields for easy templating
+    // This way we can have one template for 'count' and 'input'
+    // both iterating over the 'fields' property instead of having two
+    // templates, one pointing to count.fields and one to input.fields
+    $scope.fields = $scope.$storage.input.fields;
+
     $scope.$watch('$storage.input.fields', function(newValue, oldValue) {
         console.log("$storage.input.fields changed...");
         recalc();
-        prettifyAmount();
+        prettifyResult();
     }, true);
 
-    function prettifyAmount() {
+    function prettifyResult() {
         var fields = $scope.$storage.input.fields;
         var ugly   = [];
         var pretty = [];
@@ -22,7 +28,7 @@ dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsS
         }
         pretty = accounting.formatColumn(ugly, '€');
         for (item in fields) {
-            fields[item].prettyAmount = pretty[item];
+            fields[item].prettyResult = pretty[item];
         }
         $scope.$storage.input.fields = fields;
     }
@@ -55,7 +61,9 @@ dagstaatjeApp.controller('inputController', ['$scope', '$localStorage', 'fieldsS
         fieldsService.GetByLabel(fields, 'Verschil:').amount       = difference;
         fieldsService.GetByLabel(fields, 'Nieuwe kas:').amount     = newRegister;
 
+        // Set the $storage fields
         $scope.$storage.input.fields = fields;
+        $scope.fields = fields;
     }
 
 }]);

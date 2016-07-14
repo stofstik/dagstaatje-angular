@@ -1,11 +1,11 @@
 dagstaatjeApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/count', {
-            templateUrl: 'templates/count.html',
+            templateUrl: 'templates/list-fields.html',
             controller: 'countController'
         })
         .when('/input', {
-            templateUrl: 'templates/input.html',
+            templateUrl: 'templates/list-fields.html',
             controller: 'inputController'
         })
         .when('/settings', {
