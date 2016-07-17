@@ -20,7 +20,6 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsS
 
     $scope.$watch('$storage.count.fields', function(newValue, oldValue) {
         if (newValue === oldValue) return;
-        console.log("$storage.count.fields changed...");
         prettifyResult();
     }, true);
 

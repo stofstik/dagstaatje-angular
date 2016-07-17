@@ -208,12 +208,12 @@ dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage)
     };
 
     this.UpdateCounted = function(counted) {
-        this.GetByLabel($localStorage.input.fields, 'Geteld:').amount = counted;
+        this.GetById($localStorage.input.fields, 'counted').amount = counted;
     };
 
-    this.GetByLabel = function(fields, label){
+    this.GetById = function(fields, id){
         for(var item in fields){
-            if(fields[item].label === label){
+            if(fields[item].id === id){
                 return fields[item];
             }
         }

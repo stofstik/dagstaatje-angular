@@ -8,6 +8,10 @@ dagstaatjeApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'templates/list-fields.html',
             controller: 'inputController'
         })
+        .when('/overview', {
+            templateUrl: 'templates/list-fields.html',
+            controller: 'overviewController'
+        })
         .when('/settings', {
             templateUrl: 'templates/settings.html',
             controller: 'settingsController'

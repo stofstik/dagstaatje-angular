@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" media="screen" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/animations.css">
+
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,23 +33,30 @@
     <script src="controllers/nav-controller.js"></script>
     <script src="controllers/count-controller.js"></script>
     <script src="controllers/input-controller.js"></script>
+    <script src="controllers/overview-controller.js"></script>
     <script src="controllers/settings-controller.js"></script>
 
     <script src="directives/list-item-directive.js"></script>
 </head>
 
 <body>
-    <div ng-controller="navController" ng-cloak>
-        <md-content>
+    <div layout="column" ng-controller="navController" layout-fill>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span>Dagstaatje</span>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="send()"><md-icon>send</md-icon></md-button>
+                <md-button class="md-icon-button" ng-click="clear()"><md-icon>delete</md-icon></md-button>
+                <md-button class="md-icon-button" href="#settings" name="settings"><md-icon>settings</md-icon></md-button>
+            </div>
+        </md-toolbar>
             <md-nav-bar md-selected-nav-item="currentNavItem">
                 <md-nav-item md-nav-href="#count" name="count">Tellen</md-nav-item>
                 <md-nav-item md-nav-href="#input" name="input">Invoer</md-nav-item>
-                <md-nav-item md-nav-click="send()" name="send">Verzenden</md-nav-item>
-                <md-nav-item md-nav-click="clear()" name="clear">Wissen</md-nav-item>
-                <md-nav-item md-nav-href="#settings" name="settings">Instellingen</md-nav-item>
+                <md-nav-item md-nav-href="#overview" name="overview">Overzicht</md-nav-item>
             </md-nav-bar>
-
-            <ng-view></ng-view>
+        <md-content layout="row">
+            <ng-view flex-xs="100" flex-gt-xs="50" flex-gt-md="33"></ng-view>
         </md-content>
     </div>
 

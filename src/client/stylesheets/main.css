@@ -34,8 +34,6 @@
 */
 .formatted-output-result {
     white-space: pre;
-    margin-left: 20%;
-    padding-left: 12px !important;
-    position: relative;
     font-family: monospace;
+    margin-bottom: 8px; /* To align vertically with the md-input */
 }
