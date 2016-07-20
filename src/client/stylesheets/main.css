@@ -1,39 +1,4 @@
-.container{
-}
-/*
-.count-view-color {
-    background-color: #cceeff;
-}
-.input-view-color {
-    background-color: #ffe6cc;
-}
-.settings-view-color {
-    background-color: #dedede;
-}
-.row {
-    padding-bottom: 4px;
-    white-space: nowrap;
-    line-height: 38px;
-}
-.row> label {
-    width: 33%;
-    display: inline-block;
-}
-.row> input {
-    white-space: pre;
-    font-family: monospace;
-    height: 32px;
-    width: 20%;
-}
-.row> span {
-    white-space: pre;
-    padding-left: 4px;
-    width: 47%;
-    font-family: monospace;
-}
-*/
 .formatted-output-result {
     white-space: pre;
     font-family: monospace;
-    margin-bottom: 8px; /* To align vertically with the md-input */
 }

@@ -1,8 +1,10 @@
 <md-list-item ng-if="item.isInput === true">
+    <md-button class="inc-dec-btn md-raised">-</md-button>
     <md-input-container style="margin-top: ">
         <label>{{item.label}}</label>
         <input type="number" ng-attr-autofocus="{{hasAutoFocus(item.multiplier)}}" min="0" type="number" ng-model="item.amount" />
     </md-input-container>
+    <md-button class="inc-dec-btn md-raised">+</md-button>
     <span flex></span>
     <span class="formatted-output-result">{{item.prettyResult}}</span>
 </md-list-item>
