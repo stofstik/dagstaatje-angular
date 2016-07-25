@@ -1,103 +1,31 @@
 dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage) {
 
-    var defaultCountFields = [{
-        label: '€ 500',
-        multiplier: 500,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 200',
-        multiplier: 200,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 100',
-        multiplier: 100,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 50',
-        multiplier: 50,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 20',
-        multiplier: 20,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 10',
-        multiplier: 10,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 5',
-        multiplier: 5,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 2',
-        multiplier: 2,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 1',
-        multiplier: 1,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 0.50',
-        multiplier: 0.5,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 0.20',
-        multiplier: 0.2,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 0.10',
-        multiplier: 0.1,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: '€ 0.05',
-        multiplier: 0.05,
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: true
-    }, {
-        label: 'Totaal:',
-        amount: '',
-        result: 0,
-        prettyResult: "€ 0,00",
-        isInput: false
-    }];
+    var countValues = [500,200,100,50,20,10,5,2,1,0.50,0.20,0.10,0.05];
+
+    function countField(multiplier, amount) {
+        if(multiplier > 1) {
+            this.label = multiplier;
+        } else {
+            this.label = multiplier.toFixed(2);
+        }
+        this.multiplier   = multiplier;
+        this.amount       = amount || '';
+        this.result       = 0;
+        this.prettyResult = "€ 0,00";
+        this.isInput      = true;
+        this.hasButtons   = true;
+        this.decrement    = function() {
+            this.amount -= 1;
+            if (this.amount <= 0) this.amount = '';
+        };
+        this.increment    = function() {
+            if (this.amount === '') {
+                this.amount = 0;
+            }
+            this.amount += 1;
+        };
+    }
+
 
     var defaultInputFields = [{
         id: 'start',
@@ -191,8 +119,26 @@ dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage)
         isInput: false
     }];
 
-    this.GetNewCountFields = function() {
-        return angular.copy(defaultCountFields);
+    this.GetCountFields = function() {
+        // Get the banknote and coin values and push a new field object to array
+        var fields = [];
+        for(var i in countValues){
+            // If there are saved values set them in the new field object
+            if ($localStorage.countedAmounts) {
+                fields.push(new countField(countValues[i], $localStorage.countedAmounts[i]));
+            } else {
+                fields.push(new countField(countValues[i]));
+            }
+        }
+        // Then push the total field
+        fields.push({
+            label: 'Totaal:',
+            amount: '',
+            result: 0,
+            prettyResult: "€ 0,00",
+            isInput: false
+        });
+        return fields;
     };
 
     this.GetNewInputFields = function() {
@@ -200,7 +146,7 @@ dagstaatjeApp.service('fieldsService', ['$localStorage', function($localStorage)
     };
 
     this.ResetCountFields = function() {
-        $localStorage.count.fields = this.GetNewCountFields();
+        $localStorage.countedAmounts = [];
     };
 
     this.ResetInputFields = function() {
