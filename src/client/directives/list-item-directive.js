@@ -1,8 +1,8 @@
 // TODO This directive will return the appropiate list item based on the field.isInput property.
 
-dagstaatjeApp.directive('listItem', function() {
+dagstaatjeApp.directive('dsRow', function() {
     return {
         restrict: 'E',
-        templateUrl: 'templates/list-item.html',
+        templateUrl: 'templates/ds-row.html',
     };
 });

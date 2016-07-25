@@ -1,0 +1,16 @@
+<div class="ds-row" layout="row" layout="center center" ng-if="item.isInput === true">
+    <md-button ng-if="item.hasButtons" class="md-raised" ng-click="item.decrement()">-</md-button>
+    <md-input-container class="md-input-container">
+        <label>{{item.label}}</label>
+        <input type="number" ng-attr-autofocus="{{hasAutoFocus(item.multiplier)}}" min="0" type="number" ng-model="item.amount" />
+    </md-input-container>
+    <md-button ng-if="item.hasButtons" class="md-raised" ng-click="item.increment()">+</md-button>
+    <span flex></span>
+    <p>{{item.prettyResult}}</p>
+</div>
+
+<div layout="row" layout="center center" ng-if="item.isInput === false">
+    <p>{{item.label}}</p>
+    <span flex></span>
+    <p>{{item.prettyResult}}</p>
+</div>

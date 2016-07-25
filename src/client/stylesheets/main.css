@@ -1,4 +1,29 @@
+/* Remove spinner buttons */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 .formatted-output-result {
     white-space: pre;
     font-family: monospace;
+}
+
+
+.ds-row > .md-button {
+    min-width: 36px;
+    height: 36px;
+    margin: 18px 6px 0 6px;
+}
+
+.ds-row > .md-input-container {
+    max-width: 96px;
+    margin: 18px 0 0 0;
+}
+
+.ds-row > p {
+    margin: 27px 0 0 0;
 }

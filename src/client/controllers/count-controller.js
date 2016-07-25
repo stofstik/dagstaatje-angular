@@ -1,16 +1,7 @@
 dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsService', function countController($scope, $localStorage, fieldsService) {
 
-    $scope.$storage = $localStorage.$default({
-        count: {
-            fields: fieldsService.GetNewCountFields()
-        }
-    });
-
-    // Sync $storage to local $scope fields for easy templating
-    // This way we can have one template for 'count' and 'input'
-    // both iterating over the 'fields' property instead of having two
-    // templates, one pointing to count.fields and one to input.fields
-    $scope.fields = $scope.$storage.count.fields;
+    $scope.$storage = $localStorage;
+    $scope.fields = fieldsService.GetCountFields();
 
     $scope.hasAutoFocus = function(multiplier) {
         if(multiplier === 50) {
@@ -18,13 +9,20 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsS
         }
     };
 
-    $scope.$watch('$storage.count.fields', function(newValue, oldValue) {
+    $scope.$watch('$storage.countedAmounts', function(newValue, oldValue) {
+        if (newValue === oldValue) return;
+        $scope.fields = fieldsService.GetCountFields();
+        // TODO set focus to item that has autofocus attribute
+    }, true);
+
+    $scope.$watch('fields', function(newValue, oldValue) {
         if (newValue === oldValue) return;
         prettifyResult();
+        saveToLocalStorage();
     }, true);
 
     function prettifyResult() {
-        var fields = $scope.$storage.count.fields; // work with local variable so we dont $watch doesn't trigger until done
+        var fields = $scope.fields; // work with local variable so we dont $watch doesn't trigger until done
         var ugly = [];
         var pretty = [];
         var total = 0;
@@ -48,11 +46,18 @@ dagstaatjeApp.controller('countController', ['$scope', '$localStorage', 'fieldsS
             fields[item].prettyResult = pretty[item];
         }
         // set scope values)
-        $scope.$storage.count.fields = fields;
         $scope.fields = fields;
 
         // total counted has changed, so update the input.counted field as well
         fieldsService.UpdateCounted(total);
+    }
+
+    function saveToLocalStorage(){
+        var amounts = [];
+        for(var i in $scope.fields){
+            amounts.push($scope.fields[i].amount);
+        }
+        $localStorage.countedAmounts = amounts;
     }
 
 }]);
