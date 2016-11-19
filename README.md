@@ -1,5 +1,8 @@
 # Angular Dagstaatje
 
+<img src="https://github.com/stofstik/dagstaatje-angular/blob/daniel/screenshot-1.png" alt="screenshot" width="300px"/>
+<img src="https://github.com/stofstik/dagstaatje-angular/blob/daniel/screenshot-2.png" alt="screenshot" width="300px"/>
+
 ### Host src/client files:
 
 - ```npm install```
